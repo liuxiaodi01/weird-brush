@@ -28,7 +28,14 @@
 .cr {
   cursor: pointer;
 }
-p {
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+div {
   margin: 0;
   padding: 0;
 }

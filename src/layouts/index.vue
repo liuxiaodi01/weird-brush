@@ -47,12 +47,7 @@
         ></PerfileSetting>
       </a-layout-header>
       <a-layout-content
-        style="
-          padding: 15px;
-          margin: 15px;
-          background-color: var(--global-bg);
-          border-radius: 4px;
-        "
+        style="padding: 0px; margin: 15px; background-color: var(--global-bg)"
       >
         <router-view></router-view>
       </a-layout-content>

@@ -1,0 +1,153 @@
+@import "./var.scss";
+@import "./ant.scss";
+@import "./nprogress.scss";
+@import "./animation.scss";
+:root {
+  --global-font-size: 14px;
+  --global-bg: #fff;
+  --font-color: #191919;
+  --card-bg: #ffffff;
+  --card-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.06);
+  --card-hover-box-shadow: 0 3px 8px 6px rgba(7, 17, 27, 0.15);
+  --text-highlight-color: #1879ff;
+  --text-bg-hover: rgba(73, 177, 245, 0.7);
+  --btn-color: #fff;
+  --btn-bg: #49b1f5;
+  --border-radius: 6px;
+  --bg-color-page: #eee;
+  --boder-leavl: #e8e8e8;
+}
+
+.box {
+  background-color: var(--card-bg);
+  box-shadow: var(--card-box-shadow);
+  color: var(--font-color);
+  border-radius: var(--border-radius);
+}
+
+.cr {
+  cursor: pointer;
+}
+p {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+body,
+html,
+#app {
+  height: 100%;
+  font-size: var(--global-font-size);
+  background-color: var(--global-bg);
+  color: var(--font-color);
+}
+// text align
+@each $var in (left, center, right) {
+  .text-#{$var} {
+    text-align: $var;
+  }
+}
+@each $sizeKey, $size in $font-sizes {
+  .fs-#{$sizeKey} {
+    font-size: $size * $base-font-size;
+  }
+}
+.text-ellipsis {
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// width, height
+.w-100 {
+  width: 100%;
+}
+.h-100 {
+  height: 100%;
+}
+// flex
+.d-flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+@each $key, $value in $flex-jc {
+  .jc-#{$key} {
+    justify-content: $value;
+  }
+}
+
+@each $key, $value in $flex-ai {
+  .ai-#{$key} {
+    align-items: $value;
+  }
+}
+.flex-1 {
+  flex: 1;
+}
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+// m-0, mx-0
+@each $typeKey, $type in $spacing-types {
+  // .m-1
+  @each $sizeKey, $size in $spacing-sizes {
+    .#{$typeKey}-#{$sizeKey} {
+      #{$type}: $size * $spacing-base-size;
+    }
+  }
+  // .mx-1 , .my-1
+  @each $sizeKey, $size in $spacing-sizes {
+    .#{$typeKey}x-#{$sizeKey} {
+      #{$type}-left: $size * $spacing-base-size;
+      #{$type}-right: $size * $spacing-base-size;
+    }
+    .#{$typeKey}y-#{$sizeKey} {
+      #{$type}-top: $size * $spacing-base-size;
+      #{$type}-bottom: $size * $spacing-base-size;
+    }
+  }
+  // .mt-1
+  @each $directionKey, $direction in $spacing-directions {
+    @each $sizeKey, $size in $spacing-sizes {
+      .#{$typeKey}#{$directionKey}-#{$sizeKey} {
+        #{$type}-#{$direction}: $size * $spacing-base-size;
+      }
+    }
+  }
+}
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+  background-color: transparent;
+}
+/*定义滚动条轨道
+ 内阴影+圆角*/
+::-webkit-scrollbar-track {
+  background-color: #e2e2e2;
+}
+/*定义滑块
+ 内阴影+圆角*/
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+.iconfont {
+  font-size: 16px !important;
+}
+.flowLabel {
+  background-color: #fff;
+  padding: 4px 10px;
+  color: #565758 !important;
+  border: 1px solid #e0e3e7;
+  border-radius: 5px;
+}

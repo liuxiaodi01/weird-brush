@@ -1,0 +1,40 @@
+.ant-layout-sider,
+.ant-layout-header,
+.ant-layout-content,
+.ant-layout-footer {
+  font-size: var(--global-font-size);
+  background-color: var(--global-bg);
+  color: var(--font-color);
+}
+.ant-layout-content {
+  background-color: var(--bg-color-page);
+  height: calc(100% - 55px);
+  overflow-y: auto;
+  padding: 15px;
+}
+.ant-menu-inline,
+.ant-menu-vertical,
+.ant-menu-vertical-left {
+  border-right: 1px solid transparent;
+}
+.ant-layout-header {
+  padding: 0;
+  height: 55px;
+  border-bottom: 1px solid var(--boder-leavl);
+  display: flex;
+  justify-content: space-between;
+}
+.ant-menu-item,
+.ant-menu-sub.ant-menu-inline {
+  background-color: var(--global-bg);
+}
+
+.ant-menu-submenu-title {
+  .ant-menu-submenu-arrow::before,
+  .ant-menu-submenu-arrow::after {
+    background-color: var(--font-color);
+  }
+}
+.ant-menu-horizontal {
+  border: none;
+}

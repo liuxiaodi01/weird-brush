@@ -4,46 +4,50 @@ meta:
   sort: 2
 </route>
 <template>
-  <a-layout class="music-wrapper">
-    <a-layout-sider
-      style="
-        background-color: var(--global-bg);
-        border-right: 1px solid #f6f6f6;
-      "
-      width="230"
-    >
-      <SiderMusic
-        :menuList="menuList"
-        :currentMenu="currentMenu"
-        @clickMenu="(event) => (currentMenu = event)"
-      ></SiderMusic>
-    </a-layout-sider>
-    <a-layout>
-      <a-layout-header
+  <div class="music-wrapper">
+    <a-layout class="music-wrapper">
+      <a-layout-sider
+        width="230"
         style="
           background-color: var(--global-bg);
-          height: 80px;
-          line-height: 80px;
-          border: none;
+          border-right: 1px solid #f6f6f6;
         "
       >
-        <HeaderMusic></HeaderMusic>
-      </a-layout-header>
-      <a-layout-content style="padding: 0; background-color: var(--global-bg)">
-        <component :is="currentMenu"></component>
-      </a-layout-content>
-      <a-layout-footer
-        style="
-          padding: 0;
-          height: 70px;
-          border-top: 1px solid #ccc;
-          background-color: var(--global-bg);
-        "
-      >
-        <PlayerMusic></PlayerMusic>
-      </a-layout-footer>
+        <SiderMusic
+          :menuList="menuList"
+          :currentMenu="currentMenu"
+          @clickMenu="(event) => (currentMenu = event)"
+        ></SiderMusic>
+      </a-layout-sider>
+      <a-layout>
+        <a-layout-header
+          style="
+            background-color: var(--global-bg);
+            height: 80px;
+            line-height: 80px;
+            border: none;
+          "
+        >
+          <HeaderMusic></HeaderMusic>
+        </a-layout-header>
+        <a-layout-content
+          style="padding: 0; background-color: var(--global-bg)"
+        >
+          <component :is="currentMenu"></component>
+        </a-layout-content>
+        <a-layout-footer
+          style="
+            padding: 0 20px;
+            height: 70px;
+            background-color: var(--global-bg);
+            z-index: 111;
+          "
+        >
+          <PlayerMusic></PlayerMusic>
+        </a-layout-footer>
+      </a-layout>
     </a-layout>
-  </a-layout>
+  </div>
 </template>
 
 <script lang="ts">
@@ -79,6 +83,7 @@ export default defineComponent({
       menuList.value = menu;
       currentMenu.value = menu[0].list[0].component;
     });
+
     return {
       currentMenu,
       menuList,
@@ -88,6 +93,8 @@ export default defineComponent({
 </script>
 <style lang="scss" scoped>
 .music-wrapper {
+  position: relative;
   height: 100%;
+  min-height: 700px;
 }
 </style>

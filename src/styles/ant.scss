@@ -38,3 +38,11 @@
 .ant-menu-horizontal {
   border: none;
 }
+.ant-tooltip-inner {
+  padding: 2px 4px;
+  min-height: auto;
+}
+.ant-tabs-nav-wrap {
+  background-color: var(--global-bg);
+  padding: 0 40px;
+}

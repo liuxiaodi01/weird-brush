@@ -16,7 +16,7 @@
             }"
             @click="$emit('clickMenu', it.component)"
           >
-            <i class="iconfont icon-zhuangshiqi px-2"></i>
+            <i class="iconfont px-2" :class="it.icon"></i>
             <span>{{ it.name }}</span>
           </li>
         </ul>
